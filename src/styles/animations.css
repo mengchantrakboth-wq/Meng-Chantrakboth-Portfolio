@@ -1,0 +1,267 @@
+
+/* =========================================
+   KEYFRAME ANIMATIONS
+========================================= */
+
+@keyframes gradShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+/* Background orbs */
+
+@keyframes orb1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  35% {
+    transform: translate3d(12vw, 8vh, 0) scale(1.08);
+  }
+  70% {
+    transform: translate3d(-5vw, 15vh, 0) scale(.94);
+  }
+}
+
+@keyframes orb2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  40% {
+    transform: translate3d(-12vw, -10vh, 0) scale(1.1);
+  }
+  75% {
+    transform: translate3d(6vw, -4vh, 0) scale(.95);
+  }
+}
+
+@keyframes orb3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  30% {
+    transform: translate3d(8vw, -8vh, 0) scale(1.12);
+  }
+  65% {
+    transform: translate3d(-8vw, 6vh, 0) scale(.92);
+  }
+}
+
+/* Particles */
+
+@keyframes drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: .15;
+  }
+  25% {
+    opacity: .45;
+  }
+  50% {
+    transform: translate3d(
+      calc(var(--dx) * .6),
+      calc(var(--dy) * .6),
+      0
+    );
+    opacity: .8;
+  }
+  75% {
+    opacity: .35;
+  }
+}
+
+/* Floating elements */
+
+@keyframes floatY {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes floatDiagonal {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(7px, -10px, 0);
+  }
+}
+
+/* Rotation */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Subtle glowing pulse */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: .9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .4;
+    transform: scale(.85);
+  }
+}
+
+/* Soft breathing effect */
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: .7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+/* =========================================
+   ANIMATION ASSIGNMENTS
+========================================= */
+
+/* Background */
+.bg-grad {
+  background-size: 200% 200%;
+  animation: gradShift 35s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.bg-grid {
+  animation: gridMove 35s linear infinite;
+}
+
+/* Ambient orbs */
+.orb1 {
+  animation: orb1 32s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb2 {
+  animation: orb2 38s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb3 {
+  animation: orb3 35s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Background particles */
+.particle {
+  animation: drift 12s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Floating decorations */
+.bubble {
+  animation: floatY 8s ease-in-out infinite;
+}
+
+.shape-sq {
+  animation: spin 75s linear infinite;
+}
+
+.shape-ring {
+  animation: floatDiagonal 10s ease-in-out infinite;
+}
+
+/* Main floating elements */
+.float {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: floatY 9s ease-in-out infinite;
+}
+
+/* Technology cards */
+.tech1 {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.tech2 {
+  animation: floatY 7s ease-in-out -2s infinite;
+}
+
+.tech3 {
+  animation: floatY 8s ease-in-out -4s infinite;
+}
+
+.tech4 {
+  animation: floatY 6.5s ease-in-out -3s infinite;
+}
+
+/* Decorative elements */
+.deco1 {
+  animation: floatDiagonal 11s ease-in-out infinite;
+}
+
+.deco2 {
+  animation: floatDiagonal 13s ease-in-out -5s infinite;
+}
+
+/* Status indicator */
+.dot {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Ambient breathing */
+.orb1,
+.orb2,
+.orb3 {
+  transform-origin: center;
+}
+
+/* =========================================
+   ACCESSIBILITY & PERFORMANCE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
