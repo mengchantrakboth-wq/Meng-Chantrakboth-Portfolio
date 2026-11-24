@@ -18,6 +18,7 @@ export default function App() {
         <Hero /><Services /><About /><Resume/><Portfolio /><Skills /><Contact />
       </main>
       <Footer />
+      
     </>
   )
 }

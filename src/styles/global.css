@@ -1,7 +1,7 @@
 /* ========================================
    1. ROOT & GLOBAL STYLES
 ======================================== */
-
+@import "tailwindcss";
 :root {
   /* Oreo grayscale palette */
   --black: #000000;
@@ -22,13 +22,6 @@
   --r: 22px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 html {
   scroll-behavior: smooth;
@@ -418,85 +411,6 @@ section[id] {
   );
   pointer-events: none;
 }
-
-/* ========================================
-   7. NAVIGATION
-======================================== */
-
-.nav-wrap {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 14px 20px 0;
-}
-
-.nav {
-  max-width: 1100px;
-  margin-inline: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px 10px 24px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.75);
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  font-size: 1.05rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 4px;
-}
-
-.nav-links a {
-  position: relative;
-  display: block;
-  padding: 8px 16px;
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  transition:
-    color 0.2s,
-    transform 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--black);
-}
-
-.nav-links a:hover {
-  transform: translateY(-2px);
-}
-
-.nav-links a span {
-  position: relative;
-  z-index: 1;
-}
-
-.pill {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: var(--alto);
-}
-
-.menu-btn {
-  display: none;
-  background: none;
-  border: 0;
-  padding: 8px;
-  cursor: pointer;
-  color: var(--black);
-}
-
 /* ========================================
    8. HERO
 ======================================== */
@@ -874,137 +788,7 @@ section[id] {
 }
 
 
-/* =========================================
-   SKILLS SECTION — HIGH CONTRAST
-========================================= */
 
-.skills-intro {
-  max-width: 560px;
-  margin: -10px 0 34px;
-}
-
-.skills-intro p {
-  color: #b0b0b0;
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-/* Category layout */
-
-.skills-groups {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  align-items: stretch;
-}
-
-/* Main cards */
-
-.skill-group {
-  position: relative;
-  padding: 28px;
-  background: #171717;
-  border: 1px solid #383838;
-  border-radius: 18px;
-  overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-.skill-group:hover {
-  transform: translateY(-5px);
-  border-color: #777;
-  background: #1c1c1c;
-}
-
-/* Highlight backend */
-
-.skill-group-featured {
-  grid-column: span 2;
-  background: #1c1c1c;
-  border: 1px solid #555;
-}
-
-/* Category heading */
-
-.skill-group-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-
-.skill-group-icon {
-  width: 46px;
-  height: 46px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  background: #303030;
-  border: 1px solid #505050;
-  border-radius: 12px;
-}
-
-.skill-group-header h3 {
-  margin: 0 0 6px;
-  color: #fff;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.skill-group-header p {
-  margin: 0;
-  color: #aaa;
-  font-size: 0.82rem;
-  line-height: 1.5;
-}
-
-.skill-count {
-  margin-left: auto;
-  align-self: flex-start;
-  color: #aaa;
-  font-family: monospace;
-  font-size: 0.9rem;
-}
-
-/* Individual skill badges */
-
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 11px;
-}
-
-.skill-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 12px 15px;
-  color: #f5f5f5;
-  background: #292929;
-  border: 1px solid #484848;
-  border-radius: 10px;
-  font-size: 0.87rem;
-  font-weight: 500;
-  transition: all 0.25s ease;
-}
-
-.skill-item svg {
-  color: #d0d0d0;
-  flex-shrink: 0;
-}
-
-.skill-item:hover {
-  color: #fff;
-  background: #383838;
-  border-color: #888;
-  transform: translateY(-3px);
-}
-
-.skill-item:hover svg {
-  color: #fff;
-}
 
 /* Responsive */
 
@@ -1535,17 +1319,4 @@ section[id] {
   }
 }
 
-/* ========================================
-   20. ACCESSIBILITY
-======================================== */
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
