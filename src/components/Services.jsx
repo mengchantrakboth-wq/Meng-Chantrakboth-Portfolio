@@ -1,11 +1,23 @@
-import { Monitor, Wrench, PenTool } from 'lucide-react'
+import { Server, Database, Code2 } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHead from './SectionHead'
 
 const services = [
-  { icon: Monitor, title: 'WEB DEVELOPMENT', text: 'Fast, responsive websites built with modern technologies, clean code and a mobile-first approach.' },
-  { icon: Wrench, title: 'WEBSITE SETUP', text: 'Complete setup including SSL, domains, cPanel and FTP, so your site launches secure and runs smoothly.' },
-  { icon: PenTool, title: 'DESIGN TO CODE', text: 'UI designs and graphics converted into pixel-perfect, responsive websites.' },
+  {
+    icon: Server,
+    title: 'BACKEND DEVELOPMENT',
+    text: 'Building reliable and scalable server-side applications using Java, Spring Boot, Laravel and modern backend technologies.',
+  },
+  {
+    icon: Database,
+    title: 'DATABASE MANAGEMENT',
+    text: 'Designing, managing and optimizing relational databases using PostgreSQL and MySQL for efficient data storage and retrieval.',
+  },
+  {
+    icon: Code2,
+    title: 'REST API DEVELOPMENT',
+    text: 'Developing secure and well-structured RESTful APIs with authentication, validation, error handling and seamless frontend integration.',
+  },
 ]
 
 export default function Services() {
